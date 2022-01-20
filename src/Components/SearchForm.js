@@ -9,6 +9,7 @@ const SearchForm = ({ fetchJobs, jobs, loading }) => {
     e.preventDefault();
     await fetchJobs(params);
   };
+  
   return (
     <>
       <Form className="mb-4 mt-5" onSubmit={handleSubmit}>
@@ -36,9 +37,9 @@ const SearchForm = ({ fetchJobs, jobs, loading }) => {
         {loading ? (
           <h1>Loading...</h1>
         ) : (
-          jobs && jobs.length > 0  ? jobs.map((job) => {
+          jobs && jobs.map((job) => {
             return <Job job={job} key={job.id} />;  
-          }) : <h1>Oops nothing is there!</h1>
+          })
         )}
       </Container>
     </>
