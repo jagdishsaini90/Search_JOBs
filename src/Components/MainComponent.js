@@ -41,7 +41,7 @@ class MainComponent extends Component {
                 />
               }
             />
-            <Route path="/success" element={<SuccessPage  />} />
+            <Route path="/success/:name/:email/:coverletter" element={<SuccessPage  />} />
           </Route>
           <Route />
         </Routes>
