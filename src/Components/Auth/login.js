@@ -35,6 +35,7 @@ const Login = () => {
             placeholder="Enter email"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
+            required
           />
           <Form.Text className="text-muted">
             We'll never share your email with anyone else.
@@ -48,6 +49,7 @@ const Login = () => {
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
+            required
           />
         </Form.Group>
         <Button variant="primary" type="submit">

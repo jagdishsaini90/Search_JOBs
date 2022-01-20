@@ -7,6 +7,7 @@ import Login from "./Auth/login";
 import PrivateRoute from "./Auth/PrivateRoute";
 import Signup from "./Auth/Signup";
 import Home from "./Home";
+import SuccessPage from "./SuccessPage";
 
 // Recieving data from redux store
 const mapStateToProps = (state) => {
@@ -40,6 +41,7 @@ class MainComponent extends Component {
                 />
               }
             />
+            <Route path="/success" element={<SuccessPage  />} />
           </Route>
           <Route />
         </Routes>

@@ -37,6 +37,7 @@ const Signup = () => {
             placeholder="full name"
             onChange={(e) => setDisplayName(e.target.value)}
             value={displayName}
+            required
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -46,6 +47,7 @@ const Signup = () => {
             placeholder="Enter email"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
+            required
           />
           <Form.Text className="text-muted">
             We'll never share your email with anyone else.
@@ -59,6 +61,7 @@ const Signup = () => {
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
+            required
           />
         </Form.Group>
         <Button variant="primary" type="submit">

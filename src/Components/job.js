@@ -1,7 +1,10 @@
-import React from "react";
-import { Card, Badge, Button } from "react-bootstrap";
+import React, { useState } from "react";
+import { Card, Badge, Button, Collapse } from "react-bootstrap";
+import FullDetails from "./FullDetails";
 
 export default function Job({ job }) {
+  const [open, setOpen] = useState(false)
+  console.log(job);
   return (
     <Card className="mb-3">
       <Card.Body>
@@ -32,16 +35,19 @@ export default function Job({ job }) {
           </div>
         </div>
         <Card.Text>
-          {/* Redirecting to actual job posted website */}
-          <Button variant="primary" className="mt-3">
-            <a
-              href={job.redirect_url}
-              style={{ color: "black", textDecoration: "none" }}
-            >
-              View Details
-            </a>
+          <Button
+            onClick={() => setOpen(prevOpen => !prevOpen)}
+            variant="primary"
+            className="mt-3"
+          >
+            {open ? 'Hide Details' : 'View Details'}
           </Button>
         </Card.Text>
+        <Collapse in={open}>
+          <div className="mt-4">
+            <FullDetails job={job}  />
+          </div>
+        </Collapse>
       </Card.Body>
     </Card>
   );
