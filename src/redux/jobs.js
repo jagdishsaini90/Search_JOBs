@@ -1,5 +1,6 @@
 import * as ActionTypes from './ActionTypes';
 
+// Schema for the job store
 const JOBS = (state = {
       jobs: [],
       loading: false,

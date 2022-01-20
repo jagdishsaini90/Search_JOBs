@@ -8,12 +8,13 @@ import PrivateRoute from "./Auth/PrivateRoute";
 import Signup from "./Auth/Signup";
 import Home from "./Home";
 
+// Recieving data from redux store
 const mapStateToProps = (state) => {
   return {
     jobs: state.jobs,
   };
 };
-
+// Sending the Required requests to fetch data through redux store
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchJobs: (data) => dispatch(fetchJobs(data)),
@@ -47,4 +48,4 @@ class MainComponent extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(MainComponent); // Connecting MainComponent with redux store methods

@@ -32,6 +32,7 @@ export default function Job({ job }) {
           </div>
         </div>
         <Card.Text>
+          {/* Redirecting to actual job posted website */}
           <Button variant="primary" className="mt-3">
             <a
               href={job.redirect_url}

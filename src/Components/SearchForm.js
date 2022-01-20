@@ -3,10 +3,12 @@ import { Form, Col, Row, Button, Container } from "react-bootstrap";
 import Job from "./job";
 
 const SearchForm = ({ fetchJobs, jobs, loading }) => {
+  // params will store the keyword for search
   const [params, setParams] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // Requesting the fetchJobs method in redux/ActionCreators
     await fetchJobs(params);
   };
   
@@ -34,6 +36,7 @@ const SearchForm = ({ fetchJobs, jobs, loading }) => {
         </Row>
       </Form>
       <Container>
+        {/* if loading show loading... screen otherwise jobs list */}
         {loading ? (
           <h1>Loading...</h1>
         ) : (

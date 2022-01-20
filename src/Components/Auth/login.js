@@ -3,6 +3,8 @@ import { Button, Container, Form } from "react-bootstrap";
 import { useAuth } from "../../AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 
+
+// Login method
 const Login = () => {
   const { login } = useAuth();
   const [email, setEmail] = useState("");
@@ -22,6 +24,7 @@ const Login = () => {
       setResult("Unable to login");
     }
   };
+
   return (
     <Container className="mt-5 border">
       <Form onSubmit={handleLogin}>

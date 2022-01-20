@@ -19,7 +19,7 @@ export const jobsLoading = () => {
     type: ActionTypes.JOBS_LOADING,
   };
 };
-
+// method to fetch jobs based on the language passed
 export const fetchJobs = (data) => (dispatch) => {
   dispatch(jobsLoading(true));
   return fetch(

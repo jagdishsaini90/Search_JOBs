@@ -3,6 +3,7 @@ import { Button, Container, Form } from "react-bootstrap";
 import { useAuth } from "../../AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 
+// signup method
 const Signup = () => {
   const { signup } = useAuth();
   const [displayName, setDisplayName] = useState("");
@@ -11,15 +12,18 @@ const Signup = () => {
   const [result, setResult] = useState("");
   const navigate = useNavigate();
 
-      const handleLogin = async (e) => {
-            e.preventDefault();
+  const handleLogin = async (e) => {
+    e.preventDefault();
     if (email === "" || password === "" || displayName === "") {
       return;
     }
+    // Accessing signup method from AuthProvider file which will return boolean;
     const res = signup(email, password, displayName);
     if (res) {
+      // Redirecting to the homepage after successfull Registration
       await navigate("/");
     } else {
+      // Setting up error
       setResult("Unable to Singup");
     }
   };

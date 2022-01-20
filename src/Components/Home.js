@@ -8,9 +8,11 @@ const Home = () => {
   let local_name = localStorage.getItem("local_name");
 
   const handleLogout = () => {
+    // Removing all the save data in localstorage after logout
     localStorage.removeItem("local_email");
     localStorage.removeItem("local_name");
     localStorage.removeItem("local_password");
+    // Redirecting to the login page
     navigate("/login");
   };
   return (
@@ -20,6 +22,7 @@ const Home = () => {
           <Navbar.Brand href="#home">Search Jobs</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse className="justify-content-end">
+            {/* displaying necessary info after successfull login */}
             {local_email ? (
               <>
                 <Navbar.Text>
