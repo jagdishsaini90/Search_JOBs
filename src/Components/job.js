@@ -4,7 +4,6 @@ import FullDetails from "./FullDetails";
 
 export default function Job({ job }) {
   const [open, setOpen] = useState(false)
-  console.log(job);
   return (
     <Card className="mb-3">
       <Card.Body>
